@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "medium-scraper"
+version = "0.1.0"
+description = "Web scraper for medium articles"
+authors = ["Cristian Rincon <cristian.o.rincon.b@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+PyYAML = "^5.4.1"
+
+[tool.poetry.dev-dependencies]
+Sphinx = "^4.0.2"
+flake8 = "^3.9.2"
+autoflake = "^1.4"
+black = "^21.6b0"
+isort = "^5.9.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
