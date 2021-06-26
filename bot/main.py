@@ -62,9 +62,9 @@ def main(keywords: list):
     # tweets_listener = RetweetListener(api)
     # stream = tweepy.Stream(api.auth, tweets_listener)
     # stream.filter(track=keywords, languages=['en'])
-    keywords = keywords.split(',')
-    keywords = [f'#{i}' for i in keywords]
-    keywords = ''.join(keywords)
+    # keywords = keywords.split(',')
+    # keywords = [f'#{i}' for i in keywords]
+    # keywords = ''.join(keywords)
     logger.info(f'List of keywords: {keywords}')
     for tweet in tweepy.Cursor(api.search, q=f'{keywords}', rpp=100).items():
         if not tweet.retweeted:
