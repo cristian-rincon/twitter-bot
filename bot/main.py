@@ -71,10 +71,11 @@ def main(keywords: list):
             # Retweet, since we have not retweeted it yet
             try:
                 tweet.retweet()
+            except tweepy.TweepError as twe:
+                logger.warning(twe.message[0]['code'])
+                time.sleep(10800)
+                logger.info('Sleeping for 3 hours')
             except Exception as e:
-                if e[0].code == 185:
-                    time.sleep(10800)
-                    logger.info('Sleeping for 3 hours')
                 logger.error('Error on fav and retweet')
                 logger.error(e)
 
