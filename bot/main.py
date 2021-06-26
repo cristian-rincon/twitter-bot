@@ -59,9 +59,20 @@ class RetweetListener(tweepy.StreamListener):
 def main(keywords: list):
     bot = TwitterBot()
     api = bot.auth()
-    tweets_listener = RetweetListener(api)
-    stream = tweepy.Stream(api.auth, tweets_listener)
-    stream.filter(track=keywords, languages=['en'])
+    # tweets_listener = RetweetListener(api)
+    # stream = tweepy.Stream(api.auth, tweets_listener)
+    # stream.filter(track=keywords, languages=['en'])
+    keywords = keywords.split(',')
+    keywords = [f'#{i}' for i in keywords]
+    keywords = ''.join(keywords)
+    for tweet in tweepy.Cursor(api.search, q=f'{keywords}', rpp=100).items():
+        if not tweet.retweeted:
+            # Retweet, since we have not retweeted it yet
+            try:
+                tweet.retweet()
+            except Exception as e:
+                logger.error('Error on fav and retweet')
+                logger.error(e)
 
 
 if __name__ == '__main__':
