@@ -72,7 +72,7 @@ def main(keywords: list):
             try:
                 tweet.retweet()
             except tweepy.TweepError as twe:
-                logger.warning(twe.message[0]['code'])
+                logger.warning(twe.response)
                 time.sleep(10800)
                 logger.info('Sleeping for 3 hours')
             except Exception as e:
