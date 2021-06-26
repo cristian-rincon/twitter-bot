@@ -9,7 +9,7 @@ logger = logging.getLogger('Bot Logger')
 
 
 SAMPLE_WORDS = ['DevOps', 'GCP', 'Kubernetes',
-                'CloudOps', 'GitOps', 'Jupyter Notebooks']
+                'CloudOps', 'GitOps', 'Jupyter Notebooks', 'Artificial Intelligence']
 
 
 class Config(Enum):
