@@ -66,4 +66,4 @@ def main(keywords: list):
 
 if __name__ == '__main__':
 
-    rt_bot = main(['DevOps', 'GCP', 'Kubernetes'])
+    main(CONFIG.WORDS_TO_SEARCH.value)

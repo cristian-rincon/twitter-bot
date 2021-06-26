@@ -1,11 +1,7 @@
 FROM python:3.8-alpine
 
 WORKDIR /bot
-COPY ./bot/ $WORKDIR/
-COPY pyproject.toml poetry.lock $WORKDIR/
-# Install poetry:
-RUN pip install poetry
-RUN poetry install --no-root --no-dev
+COPY ./bot/ /bot/
+RUN pip install tweepy
 
-
-CMD ["python3", "main.py"]
+CMD ["python", "/bot/main.py"]

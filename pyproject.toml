@@ -7,7 +7,6 @@ license = "MIT"
 
 [tool.poetry.dependencies]
 python = "^3.8"
-PyYAML = "^5.4.1"
 tweepy = "^3.10.0"
 
 [tool.poetry.dev-dependencies]
