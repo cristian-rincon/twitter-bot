@@ -65,6 +65,7 @@ def main(keywords: list):
     keywords = keywords.split(',')
     keywords = [f'#{i}' for i in keywords]
     keywords = ''.join(keywords)
+    logger.info(f'List of keywords: {keywords}')
     for tweet in tweepy.Cursor(api.search, q=f'{keywords}', rpp=100).items():
         if not tweet.retweeted:
             # Retweet, since we have not retweeted it yet
