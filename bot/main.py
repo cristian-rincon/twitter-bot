@@ -1,4 +1,4 @@
-
+import time
 import tweepy
 from settings import Config, logger
 
@@ -72,6 +72,9 @@ def main(keywords: list):
             try:
                 tweet.retweet()
             except Exception as e:
+                if e[0].code == 185:
+                    time.sleep(10800)
+                    logger.info('Sleeping for 3 hours')
                 logger.error('Error on fav and retweet')
                 logger.error(e)
 
