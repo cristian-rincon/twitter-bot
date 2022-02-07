@@ -16,3 +16,4 @@ ACCESS_TOKEN        -> Can be generated from twitter devs portal
 ACCESS_TOKEN_SECRET -> Can be generated from twitter devs portal
 WORDS_TO_SEARCH     -> You can set a list of words to find. Default list is provided.
 ```
+
